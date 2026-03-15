@@ -35,8 +35,7 @@ void TestScene::Update()
 
 void TestScene::Render()
 {
-    system("cls");
-
+   
     // 20x20 그리드 생성 ('.'으로 빈칸)
     std::vector<std::string> grid(mRows, std::string(mCols, '.'));
 
@@ -50,7 +49,8 @@ void TestScene::Render()
         std::cout << grid[r] << std::endl;
     }
 
-    // (원하면 한 프레임 후 화면 지우기 로직 추가 가능)
+	system("cls"); // 콘솔 화면 지우기 (Windows 전용)
+
 }
 
 void TestScene::Release()

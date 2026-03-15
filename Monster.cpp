@@ -24,4 +24,6 @@ void Monster::Render(std::vector<std::string>& grid) const
     if (coordY >= 0 && coordY < rows && coordX >= 0 && coordX < cols) {
         grid[coordY][coordX] = Symbol;
     }
+
+	std::cout << "Monster at (" << GetX() << ", " << GetY() << ") is rendering..." << std::endl;
 }

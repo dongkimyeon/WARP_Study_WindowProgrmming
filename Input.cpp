@@ -1,7 +1,6 @@
 #include "Input.h"
 
 std::vector<Input::Key> Input::Keys = {};
-Vector2 Input::mMousePosition = Vector2::One;
 std::wstring Input::mInputText;
 
 int ASCII[(UINT)eKeyCode::End] =
@@ -70,7 +69,7 @@ void Input::updateKey(Input::Key& key)
         else
             updateKeyUp(key);
 
-        getMousePositionByWindow();
+     
     }
     else
     {
@@ -103,31 +102,6 @@ void Input::updateKeyUp(Input::Key& key)
     key.bPressed = false;
 }
 
-void Input::getMousePositionByWindow()
-{
-    POINT mousePos = {};
-    if (!GetCursorPos(&mousePos))
-    {
-        OutputDebugStringW(L"Error: GetCursorPos failed\n");
-        return;
-    }
-
-    HWND hWnd = GAME.GetHwnd();
-    if (hWnd == nullptr)
-    {
-        OutputDebugStringW(L"Error: HWND is nullptr\n");
-        return;
-    }
-
-    if (!ScreenToClient(hWnd, &mousePos))
-    {
-        OutputDebugStringW(L"Error: ScreenToClient failed\n");
-        return;
-    }
-
-    mMousePosition.x = static_cast<float>(mousePos.x);
-    mMousePosition.y = static_cast<float>(mousePos.y);
-}
 
 void Input::clearKeys()
 {

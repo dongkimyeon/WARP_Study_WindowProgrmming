@@ -1,4 +1,6 @@
 #include "SceneManager.h"
+#include "Time.h"
+#include "Input.h"
 
 // 정적 멤버 변수 초기화
 std::map<std::wstring, Scene*> SceneManager::mScenes;
@@ -6,7 +8,7 @@ Scene* SceneManager::mActiveScene = nullptr;
 
 void SceneManager::Initialize()
 {
-	// 씬 매니저 자체의 초기화가 필요하다면 여기에 작성
+	Time::Initialize();
 }
 
 Scene* SceneManager::LoadScene(const std::wstring& name)
@@ -26,6 +28,7 @@ Scene* SceneManager::LoadScene(const std::wstring& name)
 
 void SceneManager::Update()
 {
+	Time::Update();
 	if (mActiveScene != nullptr)
 	{
 		mActiveScene->Update();
@@ -37,7 +40,9 @@ void SceneManager::Render()
 	if (mActiveScene != nullptr)
 	{
 		mActiveScene->Render();
+	
 	}
+	std::cout << Time::DeltaTime() << std::endl;
 }
 
 void SceneManager::Release()
