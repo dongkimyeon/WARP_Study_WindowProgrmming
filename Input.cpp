@@ -62,7 +62,7 @@ void Input::updateKeys()
 
 void Input::updateKey(Input::Key& key)
 {
-    if (GetFocus())
+   /* if (GetFocus())
     {
         if (isKeyDown(key.keyCode))
             updateKeyDown(key);
@@ -74,7 +74,14 @@ void Input::updateKey(Input::Key& key)
     else
     {
         clearKeys();
-    }
+    }*/
+
+    
+    if (isKeyDown(key.keyCode))
+        updateKeyDown(key);
+    else
+        updateKeyUp(key);
+
 }
 
 bool Input::isKeyDown(eKeyCode code)

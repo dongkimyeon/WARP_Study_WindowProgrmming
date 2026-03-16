@@ -9,9 +9,9 @@ Player::~Player()
 {
 }
 
-void Player::Update()
+void Player::Update(float dt)
 {
-    // 현재 정적 위치. 이동 로직 추가 가능
+	std::cout << "Player delta time: " << dt << " seconds" << std::endl;    
 }
 
 void Player::Render(std::vector<std::string>& grid) const

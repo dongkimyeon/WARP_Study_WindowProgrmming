@@ -13,15 +13,12 @@ Monster::~Monster()
 {
 }
 
-void Monster::Update()
+void Monster::Update(float dt)
 {
-    std::cout << "Monster at (" << GetX() << ", " << GetY() << ") is updating..." << std::endl;
-
+  
     if(DebugMode) {
-        // Debug 모드에서는 몬스터가 랜덤하게 이동하도록 구현할 수 있습니다.
-        // 예시: 좌우로 이동
-        int direction = rand() % 3 - 1; // -1, 0, 1 중 하나
-        SetPosition(GetX() + direction, GetY());
+        std::cout << "Monster at (" << GetX() << ", " << GetY() << ") is updating..." << std::endl;
+
 	}
 }
 

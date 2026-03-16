@@ -5,7 +5,7 @@ Framework GAME;
 
 using namespace std;
 
-extern bool DebugMode = true;
+extern bool DebugMode = false;
 
 int main() {
 	

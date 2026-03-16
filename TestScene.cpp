@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Player.h"
 #include "Monster.h"
+#include "Time.h"
 #include <windows.h>
 
 TestScene::TestScene()
@@ -24,11 +25,11 @@ void TestScene::Initialize()
     std::cout << "[" << std::string(GetName().begin(), GetName().end()) << "] Initialized!" << std::endl;
 }
 
-void TestScene::Update()
+void TestScene::Update(float dt)
 {
     // 모든 게임 오브젝트의 Update 호출
     for (GameObject* obj : mObjects) {
-        if (obj) obj->Update();
+        if (obj) obj->Update(Time::DeltaTime());
     }
     // 필요 시 씬 전환 등 처리
 }

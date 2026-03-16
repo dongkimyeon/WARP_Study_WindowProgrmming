@@ -10,7 +10,7 @@ public:
     virtual ~GameObject();
 
  
-    virtual void Update() = 0;
+    virtual void Update(float dt) = 0;
     virtual void Render(std::vector<std::string>& grid) const = 0;
 
     int GetX() const { return coordX; }

@@ -12,7 +12,7 @@ public:
 	virtual ~TestScene();
 
 	virtual void Initialize() override;
-	virtual void Update() override;
+	virtual void Update(float dt) override;
 	virtual void Render() override;
 	virtual void Release() override;
 private:

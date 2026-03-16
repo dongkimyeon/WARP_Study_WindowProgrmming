@@ -16,6 +16,8 @@ void Framework::Run()
     {
         Update(); // 데이터 갱신
         Render(); // 화면 그리기
+	
+		
     }
 
     Release(); // 루프 종료 후 메모리 정리

@@ -10,7 +10,7 @@ GameObject::~GameObject()
 {
 }
 
-void GameObject::Update()
+void GameObject::Update(float dt)
 {
     // 기본 구현 없음 — 필요시 자식에서 override
 }
